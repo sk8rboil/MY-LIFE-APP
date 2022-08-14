@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyHomepage extends StatelessWidget {
   const MyHomepage({Key? key}) : super(key: key);
@@ -18,8 +19,13 @@ class MyHomepage extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'HOMEPAGE',
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('login_page');
+                },
+                child: Text('LoginPage')),
           ],
         ),
       ),

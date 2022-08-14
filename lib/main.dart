@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_life_app/homepage.dart';
+import 'package:my_life_app/views/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +15,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
       home: const MyHomepage(),
+      getPages: [
+        GetPage(name: '/login_page', page: () => MyLoginPage()),
+      ],
     );
   }
 }
